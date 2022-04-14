@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import useToken from '../App/useToken';
 import Calculation from '../Calculation/Calculation';
 import Login from '../Login/Login';
@@ -7,7 +7,6 @@ import Login from '../Login/Login';
 
 export default function LoginPage() {
   const {token, setToken } = useToken();
-  const [carbon, setCarbon] = useState();
   useEffect(()=>{document.title="Login"},[])
 
  //**Check login information */

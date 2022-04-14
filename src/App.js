@@ -4,8 +4,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import LoginPage from './components/LoginPage/LoginPage';
 import SignupPage from './components/SignupPage/SignupPage';
-import Login from './components/Login/Login';
-import useToken from './components/App/useToken';
 import Home from './components/Home/Home';
 
 
