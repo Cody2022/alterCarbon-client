@@ -31,8 +31,11 @@ const loginUser=async(credentials)=>{
         <div className="login-wrapper">
             <h1>Please Log In</h1>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label>Username:</label> <br/>
+               
+                    <label>Username:</label> 
+                    <br/>
                     <input type="text" name="Username" onChange={e => setUserName(e.target.value)}/><br/>
+                   
                 <label>Password: </label><br/>
                     <input type="password" name="Password" onChange={e => setPassword(e.target.value)}/>
                 <div>

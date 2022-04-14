@@ -2,13 +2,23 @@ import React, {useEffect, useState} from 'react';
 import './Calculation.css'
 
 const Calculation=()=>{
-    const [electricity, setElectricity]=useState();
-    const [nGas, setNGas]=useState();
-    const [water, setWater]=useState();
-    const [food, setFood]=useState();
-    const [car, setCar]=useState();
-    const [plastic, setPlastic]=useState();
-    let [carbon, setCarbon]=useState();
+    const [electricity, setElectricity]=useState(0);
+    const [nGas, setNGas]=useState(0);
+    const [water, setWater]=useState(0);
+    const [food, setFood]=useState(0);
+    const [car, setCar]=useState(0);
+    const [plastic, setPlastic]=useState(0);
+    const [carbon, setCarbon]=useState(0);
+    // const {electricityco2e,gasco2e,waterco2e,foodco2e,plasticco2e,carco2e}=carbonEmission;
+    const [carbonEmission, setCarbonEmission]=useState({
+        electricityco2e :0,
+        gasco2e:0,
+        waterco2e :0,
+        foodco2e :0,
+        plasticco2e:0,
+        carco2e:0
+    });
+
 
    const fetchCarbon = async (carbonSources) => {
       const response = await fetch("/carbon", {
@@ -31,35 +41,49 @@ const Calculation=()=>{
         plastic,
         car  
       });
-      console.log("Carbon is", (carbonEmission.co2e))
-      carbon=carbonEmission.co2e;
-      setCarbon(carbon);
+      console.log("CarbonEmission is", (carbonEmission))
+      const {electricityco2e,gasco2e,waterco2e,foodco2e,plasticco2e,carco2e}=carbonEmission;
+      let totalcarbon=Number((electricityco2e+gasco2e+waterco2e+foodco2e+plasticco2e+carco2e).toFixed(2));
+      setCarbonEmission(carbonEmission);  
+      setCarbon (totalcarbon)
+      ;
     }
 
     return(
         <div className="carbon-wrapper">
-                <h1 >Calculation carbon footprint</h1>
-                <form className="carbonSources-form" onSubmit={handleSubmit}>
-                    <label>Electricity, kWh: </label><br/>  
-                        <input type="text" name="Electricity" onChange={e => setElectricity(e.target.value)}/><br/>
+          <h1 style={{textAlign:"center"}}>Carbon footprint calculation</h1>
+             <div className="center">
+                <form className="carbonSources-form" style={{dispaly:"flex"}} onSubmit={handleSubmit}>
+                  <label>Electricity, kWh: </label> <br/>
+                        <input type="text" name="Electricity" value={electricity} style={{textAlign: "center"}} onChange={e => setElectricity(e.target.value)}/><br/>
+                        <label>Electricity CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.electricityco2e}</span><br/><br/>
+                                                            
                     <label>Natural gas, GJ: </label><br/>
-                        <input type="text" name="nGas" onChange={e => setNGas(e.target.value)}/><br/>
+                        <input type="text" name="nGas" value={nGas} style={{textAlign: "center"}} onChange={e => setNGas(e.target.value)}/><br/>
+                        <label>Natural gas CO2 emission, kg: </label> <span style={{textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.gasco2e}</span><br/><br/>    
                     <label>Water, m3: </label><br/>
-                        <input type="text" name="water" onChange={e => setWater(e.target.value)}/><br/>
+                        <input type="text" name="water" value={water} style={{textAlign: "center"}} onChange={e => setWater(e.target.value)}/><br/>
+                        <label>Wastewater treatment CO2 emission, kg: </label> <span style={{margin:5,textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.waterco2e}</span><br/><br/>
                     <label>Food, kg: </label><br/>
-                        <input type="text" name="food" onChange={e => setFood(e.target.value)}/><br/>
+                        <input type="text" name="food" value={food} style={{textAlign: "center"}} onChange={e => setFood(e.target.value)}/><br/>
+                        <label>Foodwaste treatment CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.foodco2e}</span><br/><br/>
                     <label>Plastic, kg: </label><br/>
-                        <input type="text" name="plastic" onChange={e => setPlastic(e.target.value)}/><br/>
-                    <label>Car, km: </label><br/>
-                        <input type="text" name="car" onChange={e => setCar(e.target.value)}/><br/>
-                      
+                        <input type="text" name="plastic" value={plastic} style={{textAlign: "center"}} onChange={e => setPlastic(e.target.value)}/><br/>
+                        <label>Plastic treatment CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.plasticco2e}</span><br/><br/>
+                    <label>Distance of using car, km: </label><br/>
+                        <input type="text" name="car" value={car} style={{textAlign: "center"}} onChange={e => setCar(e.target.value)}/><br/>
+                        <label>Car CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.carco2e}</span><br/>
                     <div>
-                        <button type="submit">Calculate</button>
+                        <br/>
+                        <button type="submit" style={{color:"black",fontWeight:"bold",backgroundColor:"#ffef00"}}>Calculate</button>
                     </div>
-                    <br/><label>CO2 equivelant, kg: </label>{carbon} 
-                
+                    <div>
+                        <label>Total CO2 equivalent, kg: </label><span style={{textDecoration:"underline",fontWeight:"bold"}} >{carbon}</span> 
+                     </div>
+                     <br/>
                 </form>
-            </div>    
+            </div>
+        </div>    
       );
 
 }
