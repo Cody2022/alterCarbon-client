@@ -21,7 +21,7 @@ const Calculation=()=>{
 
 
    const fetchCarbon = async (carbonSources) => {
-      const response = await fetch("/carbon", {
+      const response = await fetch("/api/carbon", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
