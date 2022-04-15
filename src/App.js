@@ -1,6 +1,6 @@
 
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import LoginPage from './components/LoginPage/LoginPage';
 import SignupPage from './components/SignupPage/SignupPage';
@@ -18,7 +18,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<LoginPage />}/>
           <Route exact path="/signup" element={<SignupPage />}/>
-        </Routes>
+          <Route exact path="/logout" element={<LogoutPage />}/>
+       </Routes>
       </BrowserRouter>
     </div>
   );

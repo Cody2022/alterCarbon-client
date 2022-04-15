@@ -4,15 +4,15 @@ const Home = () => {
   return (
     <>
       <div>
-        <ul>
-          {/* <li>
-            <Link to="/">Home</Link>
-          </li> */}
+        <ul style={{}}>
           <li>
             <Link to="/login">Login</Link>
           </li>
           <li>
             <Link to="/signup">Signup</Link>
+          </li>
+           <li>
+            <Link to="/">Logout</Link>
           </li>
         </ul>
       </div>
