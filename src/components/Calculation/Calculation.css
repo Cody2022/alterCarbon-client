@@ -12,3 +12,10 @@
     text-align: center;
     border-radius: 25px;   
 }
+
+.logoutButton{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    size: 2rem;
+}

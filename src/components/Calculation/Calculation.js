@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from "react-router-dom";
 import './Calculation.css'
 
 const Calculation=()=>{
@@ -48,9 +49,18 @@ const Calculation=()=>{
       setCarbon (totalcarbon)
       ;
     }
+    const navigate=useNavigate();
+    const handleLogout=()=>{
+        sessionStorage.clear();
+        navigate('/')
+    }
 
     return(
         <div className="carbon-wrapper">
+           <div className="logoutButton" onClick={handleLogout}>
+               <button>Logout</button>
+           </div>
+
           <h1 style={{textAlign:"center"}}>Carbon footprint calculation</h1>
              <div className="center">
                 <form className="carbonSources-form" style={{dispaly:"flex"}} onSubmit={handleSubmit}>
@@ -83,10 +93,10 @@ const Calculation=()=>{
                      <br/>
                 </form>
             </div>
+            
         </div>    
       );
 
 }
-
 
 export default Calculation;
