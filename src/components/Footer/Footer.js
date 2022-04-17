@@ -35,13 +35,14 @@ const Footer = (props) => {
                 body:JSON.stringify({cityName:city})
             });
             console.log("response status", response.status)
-            const weatherData=await response.json()
-            const { main, sys, weather } = weatherData;
-            // setShowFooter(true);
-            setIcon(`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`);
-            setDescription(weather[0]["description"]);
-            setCountry(sys.country); 
-            setTemp(Math.round(main.temp));
+            if (response.status===200){
+                const weatherData=await response.json()
+                const { main, sys, weather } = weatherData;
+                setIcon(`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`);
+                setDescription(weather[0]["description"]);
+                setCountry(sys.country); 
+                setTemp(Math.round(main.temp));
+            }else {setShowFooter(false);}
         };
           fetchWeather();
     
