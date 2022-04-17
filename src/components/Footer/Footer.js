@@ -9,15 +9,6 @@ const Footer = (props) => {
     const [city, setCity]=useState("chengde");
     const [country, setCountry]=useState();
 
-    // useEffect(()=>{
-    //     const geoLocation=async ()=>{
-    //         let geoResponse=await fetch("https://freegeoip.app/json/")
-    //         let geoJson=await geoResponse.json();
-    //         setCity(geoJson.city);
-    //     };
-    //       geoLocation();        
-    //     },[]
-    // )
          const geoLocation=async ()=>{
                 let geoResponse=await fetch("https://freegeoip.app/json/")
                 let geoJson=await geoResponse.json();
@@ -62,4 +53,4 @@ const Footer = (props) => {
   );
 }
 
-export default Footer
+export default Footer;
