@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
 const signupUser = async (credentials) => {
@@ -22,11 +23,19 @@ const Signup = (props) => {
     e.preventDefault();
     const userSubmit = await signupUser({ user, passw });
     console.log(userSubmit);
-    //console.log(sign);
-  };
 
+  };
+  const navigate=useNavigate();
+    const handleHome=()=>{
+        sessionStorage.clear();
+        navigate('/')
+    }
+   
   return (
     <div className="signup-wrapper">
+      <div className="homeButton" onClick={handleHome}>
+               <button>Home</button>
+           </div>
       <h1>Please Signup</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
         <label>Username:</label>
