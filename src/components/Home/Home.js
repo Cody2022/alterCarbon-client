@@ -16,27 +16,26 @@ const Home = () => {
           width: 1600,
         }}
       >
-          <div className="home">
-            <ul>
-              <li>
-                <Link to="/login" style={{ color: "black" }}>
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link to="/signup" style={{ color: "black" }}>
-                  Signup
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="home">
+          <ul>
+            <li>
+              <Link to="/login" style={{ color: "black" }}>
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/signup" style={{ color: "black" }}>
+                Signup
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-          <Outlet />
-         </div>
-          {/* <Footer /> */}
-       {showFooter && <Footer setShowFooter={setShowFooter}/>}
+        <Outlet />
+      </div>
+       {showFooter && <Footer setShowFooter={setShowFooter} />}
     </div>
-    );
+  );
 };
 
 export default Home;

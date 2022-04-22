@@ -12,11 +12,11 @@ const loginUser=async(credentials)=>{
     return response.json();
 }
 
-
  const Login = (props) => {
     const setToken=props.setToken;
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
+    const [message, setMessage]=useState();
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -24,14 +24,19 @@ const loginUser=async(credentials)=>{
           username,
           password
         });
-        console.log("token at handleSubmit", token)
         setToken(token);
+        setMessage(token.message);
       }
     return (
         <div className="login-wrapper">
             <h1>Please Log In</h1>
             <form className="login-form" onSubmit={handleSubmit}>
-               
+                   {message&&
+                   <div>
+                      <label style={{color:"red"}}>{message}!</label>
+                      <br/>
+                   </div>}
+                    <br/>
                     <label>Username:</label> 
                     <br/>
                     <input type="text" name="Username" placeholder='Username' onChange={e => setUserName(e.target.value)}/><br/>
