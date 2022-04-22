@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import './Calculation.css'
+// { History } from "../History/History";
 
 const Calculation=()=>{
     const [electricity, setElectricity]=useState(0);
@@ -55,11 +56,19 @@ const Calculation=()=>{
         navigate('/')
     }
 
+    const handleHistory=()=>{
+        navigate('/history')
+    }
+
     return(
         <div className="carbon-wrapper">
            <div className="logoutButton" onClick={handleLogout}>
                <button>Logout</button>
            </div>
+           <div className="historyButton" onClick={handleHistory}>
+               <button>History</button>
+           </div>
+        
 
           <h1 style={{textAlign:"center"}}>Carbon footprint calculation</h1>
              <div className="center">
