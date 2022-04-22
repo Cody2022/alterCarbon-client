@@ -5,7 +5,6 @@ export default function HistoryPage() {
     useEffect(() => {
         document.title = "History";
       }, []);
-    console.log("History")
+    
     return <History/>
-
 }

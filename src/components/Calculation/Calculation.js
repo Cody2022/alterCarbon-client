@@ -88,7 +88,7 @@ const Calculation=()=>{
                         <label>Foodwaste treatment CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.foodco2e}</span><br/><br/>
                     <label>Plastic, kg: </label><br/>
                         <input type="text" name="plastic" value={plastic} style={{textAlign: "center"}} onChange={e => setPlastic(e.target.value)}/><br/>
-                        <label>Plastic treatment CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.plasticco2e}</span><br/><br/>
+                        <label>Plasticwaste treatment CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.plasticco2e}</span><br/><br/>
                     <label>Distance of using car, km: </label><br/>
                         <input type="text" name="car" value={car} style={{textAlign: "center"}} onChange={e => setCar(e.target.value)}/><br/>
                         <label>Car CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.carco2e}</span><br/>

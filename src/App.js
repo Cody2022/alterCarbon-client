@@ -1,12 +1,11 @@
 
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {Routes, Route } from 'react-router-dom';
 import './App.css';
 import LoginPage from './components/LoginPage/LoginPage';
 import SignupPage from './components/SignupPage/SignupPage';
 import Home from './components/Home/Home';
 import HistoryPage from './components/HistoryPage/HistoryPage';
-
 
 function App() {
   
