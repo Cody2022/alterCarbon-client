@@ -13,13 +13,11 @@ function App() {
   
   return (
     <div className="wrapper">
-      <BrowserRouter>
-        <Routes>
+       <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<LoginPage />}/>
           <Route exact path="/signup" element={<SignupPage />}/>
-        </Routes>
-      </BrowserRouter>
+       </Routes>
     </div>
   );
 }

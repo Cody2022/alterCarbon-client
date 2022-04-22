@@ -34,21 +34,21 @@ const loginUser=async(credentials)=>{
                    {message&&
                    <div>
                       <label style={{color:"red"}}>{message}!</label>
-                      <br/>
+                      <br />
                    </div>}
                     <br/>
                     <label>Username:</label> 
-                    <br/>
+                    <br />
                     <input type="text" name="Username" placeholder='Username' onChange={e => setUserName(e.target.value)}/><br/>
                    
-                <label>Password: </label><br/>
+                <label>Password: </label><br />
                     <input type="password" name="Password" placeholder='Password' onChange={e => setPassword(e.target.value)}/>
                 <div>
-                    <br/>
-                    <button type="submit">Log in</button><br/>
-                    </div>
+                    <br />
+                    <button type="submit">Log in</button><br />
+                 </div>
             </form>
-              <div><br/></div>
+              <div><br /></div>
         </div>    
     )
 }

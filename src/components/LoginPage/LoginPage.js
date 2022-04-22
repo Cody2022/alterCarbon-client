@@ -9,7 +9,6 @@ export default function LoginPage() {
   useEffect(()=>{document.title="Login"},[])
 
  //**Check login information */
- console.log("LoginPage token is:",token)
   if(token.status!=="successful") {
     return <Login setToken={setToken} />
   }
