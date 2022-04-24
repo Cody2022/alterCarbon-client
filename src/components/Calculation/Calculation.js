@@ -48,6 +48,7 @@ const Calculation=()=>{
       setCarbonEmission(carbonEmission);  
       setCarbon (totalcarbon);
       setShowSaveButton(true);
+      setShowSaveStatus(false);
     }
     const navigate=useNavigate();
     const handleLogout=()=>{
