@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
-import './Calculation.css'
-// { History } from "../History/History";
+import './Calculation.css';
+
 
 const Calculation=()=>{
     const [electricity, setElectricity]=useState(0);
@@ -10,8 +10,7 @@ const Calculation=()=>{
     const [food, setFood]=useState(0);
     const [car, setCar]=useState(0);
     const [plastic, setPlastic]=useState(0);
-    const [carbon, setCarbon]=useState(0);
-    // const {electricityco2e,gasco2e,waterco2e,foodco2e,plasticco2e,carco2e}=carbonEmission;
+    const [carbon, setCarbon]=useState();
     const [carbonEmission, setCarbonEmission]=useState({
         electricityco2e :0,
         gasco2e:0,
@@ -20,7 +19,8 @@ const Calculation=()=>{
         plasticco2e:0,
         carco2e:0
     });
-
+    const [showSaveButton, setShowSaveButton]=useState(false);
+    const [showSaveStatus, setShowSaveStatus]=useState(false);
 
    const fetchCarbon = async (carbonSources) => {
       const response = await fetch("/api/carbon", {
@@ -41,14 +41,13 @@ const Calculation=()=>{
         water,
         food,
         plastic,
-        car  
+        car,
       });
-      console.log("CarbonEmission is", (carbonEmission))
       const {electricityco2e,gasco2e,waterco2e,foodco2e,plasticco2e,carco2e}=carbonEmission;
       let totalcarbon=Number((electricityco2e+gasco2e+waterco2e+foodco2e+plasticco2e+carco2e).toFixed(2));
       setCarbonEmission(carbonEmission);  
-      setCarbon (totalcarbon)
-      ;
+      setCarbon (totalcarbon);
+      setShowSaveButton(true);
     }
     const navigate=useNavigate();
     const handleLogout=()=>{
@@ -56,8 +55,43 @@ const Calculation=()=>{
         navigate('/')
     }
 
-    const handleHistory=()=>{
-        navigate('/history')
+    const handleHistory=()=>{navigate('/history')}
+
+    const postRecord = async (userRecord) => {
+        const response = await fetch("/api/save", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userRecord),
+        });
+        if (response.status===200) {
+            setShowSaveStatus(true)
+            return response.json();
+        }
+      };
+
+    const handleSaveResult=async (e)=>{
+        e.preventDefault();
+        const tokenString = sessionStorage.getItem("token");
+        const tokenObject = JSON.parse(tokenString);
+        const {status, id}=tokenObject;
+        
+        if (status==="successful"){
+            //get carbon emission data and save
+            const date=(new Date()).toLocaleString();
+            const electricity=carbonEmission.electricityco2e;
+            const naturalGas=carbonEmission.gasco2e;
+            const carMiles=carbonEmission.carco2e;
+            const plasticWaste=carbonEmission.plasticco2e;
+            const water=carbonEmission.waterco2e;
+            const food=carbonEmission.foodco2e;
+            const totalCarbon=carbon;
+            const record={date,electricity,naturalGas,carMiles,plasticWaste,water,food,totalCarbon}
+            const userName=id;
+
+            const recordSaved=await postRecord({userName, record});            
+        }
     }
 
     return(
@@ -66,17 +100,14 @@ const Calculation=()=>{
                <button>Logout</button>
            </div>
            <div className="historyButton" onClick={handleHistory}>
-               <button>History</button>
-           </div>
-        
-
+               <button>Data Analysis</button>
+           </div>   
           <h1 style={{textAlign:"center"}}>Carbon footprint calculation</h1>
              <div className="center">
                 <form className="carbonSources-form" style={{dispaly:"flex"}} onSubmit={handleSubmit}>
                   <label>Electricity, kWh: </label> <br/>
                         <input type="text" name="Electricity" value={electricity} style={{textAlign: "center"}} onChange={e => setElectricity(e.target.value)}/><br/>
-                        <label>Electricity CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.electricityco2e}</span><br/><br/>
-                                                            
+                        <label>Electricity CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.electricityco2e}</span><br/><br/>                                        
                     <label>Natural gas, GJ: </label><br/>
                         <input type="text" name="nGas" value={nGas} style={{textAlign: "center"}} onChange={e => setNGas(e.target.value)}/><br/>
                         <label>Natural gas CO2 emission, kg: </label> <span style={{textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.gasco2e}</span><br/><br/>    
@@ -94,18 +125,16 @@ const Calculation=()=>{
                         <label>Car CO2 emission, kg: </label> <span style={{margin:5, textDecoration:"underline",fontWeight:"bold"}}>{carbonEmission.carco2e}</span><br/>
                     <div>
                         <br/>
-                        <button type="submit" style={{color:"black",fontWeight:"bold",backgroundColor:"#ffef00"}}>Calculate</button>
+                        <button type="submit">Calculate</button><span>    </span>
+                        {showSaveButton &&  <button onClick={handleSaveResult}>Save</button>}
                     </div>
-                    <div>
-                        <label>Total CO2 equivalent, kg: </label><span style={{textDecoration:"underline",fontWeight:"bold"}} >{carbon}</span> 
-                     </div>
+                     {carbon && (<label>Total CO2 equivalent, kg: {carbon}</label>)} 
                      <br/>
-                </form>
+                </form>   
+                {showSaveStatus &&<p>Record has been saved successfully!</p>}
             </div>
-            
         </div>    
       );
-
 }
 
 export default Calculation;

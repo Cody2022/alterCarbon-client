@@ -26,15 +26,15 @@ const Signup = (props) => {
 
   };
   const navigate=useNavigate();
-    const handleHome=()=>{
+    const handleButton=()=>{
         sessionStorage.clear();
-        navigate('/')
+        navigate('/login')
     }
    
   return (
     <div className="signup-wrapper">
-      <div className="homeButton" onClick={handleHome}>
-               <button>Home</button>
+      <div className="backtoLoginButton" onClick={handleButton}>
+               <button>Log In</button>
            </div>
       <h1>Please Signup</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
