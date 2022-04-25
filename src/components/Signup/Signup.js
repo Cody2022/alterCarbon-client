@@ -10,34 +10,38 @@ const signupUser = async (credentials) => {
     },
     body: JSON.stringify(credentials),
   });
-  console.log(res);
-  //return res;
+  return res.json();
 };
 
 const Signup = (props) => {
   //const sign = props.sign;
   const [user, setUser] = useState();
   const [passw, setPassw] = useState();
+  const [message, setMessage] = useState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userSubmit = await signupUser({ user, passw });
-    console.log(userSubmit);
-
+    setMessage(userSubmit.message);
   };
-  const navigate=useNavigate();
-    const handleHome=()=>{
-        sessionStorage.clear();
-        navigate('/')
-    }
-   
+  const navigate = useNavigate();
+  const handleHome = () => {
+    sessionStorage.clear();
+    navigate("/");
+  };
+
   return (
     <div className="signup-wrapper">
       <div className="homeButton" onClick={handleHome}>
-               <button>Home</button>
-           </div>
+        <button>Home</button>
+      </div>
       <h1>Please Signup</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
+        {message&& 
+          <div>
+            <lable style={{color:"red"}}>{message}!</lable>
+          </div>
+        }
         <label>Username:</label>
         <br />
         <input
@@ -61,6 +65,7 @@ const Signup = (props) => {
           <button type="submit">Signup</button>
           <br />
         </div>
+         <br />
       </form>
       <div>
         <br />
