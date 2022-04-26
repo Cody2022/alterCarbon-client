@@ -1,5 +1,6 @@
 import React, {useState } from 'react';
 import "./Login.css";
+import { useNavigate } from 'react-router-dom';
 
 const loginUser=async(credentials)=>{
     const response=await fetch ('/api/login', {
@@ -27,8 +28,11 @@ const loginUser=async(credentials)=>{
         setToken(token);
         setMessage(token.message);
       }
+      const navigate=useNavigate();
+      
     return (
         <div className="login-wrapper">
+            <button onClick={()=>{navigate('/')}}>Home</button>
             <h1>Please Log In</h1>
             <form className="login-form" onSubmit={handleSubmit}>
                    {message&&

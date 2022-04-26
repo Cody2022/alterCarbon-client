@@ -24,17 +24,17 @@ const Signup = (props) => {
     const userSubmit = await signupUser({ user, passw });
     setMessage(userSubmit.message);
   };
-  const navigate = useNavigate();
-  const handleHome = () => {
-    sessionStorage.clear();
-    navigate("/");
-  };
-
+  const navigate=useNavigate();
+    const handleButton=()=>{
+        sessionStorage.clear();
+        navigate('/login')
+    }
+   
   return (
     <div className="signup-wrapper">
-      <div className="homeButton" onClick={handleHome}>
-        <button>Home</button>
-      </div>
+      <div className="backtoLoginButton" onClick={handleButton}>
+               <button>Log In</button>
+           </div>
       <h1>Please Signup</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
         {message&& 
