@@ -28,8 +28,15 @@ const Home = () => {
                 Signup
               </Link>
             </li>
+            <li>
+              <Link to="/map" style={{ color: "black" }}>
+                Map
+              </Link>
+            </li>
           </ul>
         </div>
+
+
 
         <Outlet />
       </div>
