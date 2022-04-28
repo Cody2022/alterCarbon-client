@@ -3,8 +3,8 @@ import { RulerControl, StylesControl, CompassControl, ZoomControl } from 'mapbox
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState } from "react";
 import Map, { Layer, Source, Marker, NavigationControl } from "react-map-gl";
-import geoJsonData from "./Data/ParksSitesAddress.geojson";
-import "../App.css";
+import geoJsonData from "../Data/ParksSitesAddress.geojson";
+import "../../App.css";
 //import parkLogo from './svg/park-trees.svg';
 
 const navStyle = {
