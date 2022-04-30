@@ -62,7 +62,7 @@ const Signup = (props) => {
         />
         <div>
           <br />
-          <button type="submit">Signup</button>
+          <button type="submit">Sign Up</button>
           <br />
         </div>
          <br />
