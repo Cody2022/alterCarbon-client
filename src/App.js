@@ -7,6 +7,8 @@ import Home from "./components/Home/Home";
 import HistoryPage from "./components/HistoryPage/HistoryPage";
 import Maps from "./components/Map/mapBox";
 import Facilities from "./components/Map/Facilities";
+import Navbar from "./components/Navbar/Navbar";
+import NavBar from "./components/Navbar/Navbar";
 
 function App() {
   useEffect(() => {
@@ -15,6 +17,9 @@ function App() {
 
   return (
     <div className="wrapper">
+      <header className="wrapper-header">
+        <NavBar />
+      </header>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<LoginPage />} />
