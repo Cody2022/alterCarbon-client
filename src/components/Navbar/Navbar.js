@@ -4,12 +4,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { Link as RouterLink } from "react-router-dom";
 import { Link } from "@mui/material";
+import logo from "../../img/logo.jpg" 
+
 export default function NavBar() {
   return (
     <AppBar position="static">
       <Toolbar>
       <Link to="/">
-          <img src="./img/Foot.jpg" height={40}/>
+          <img src={logo} alt="AlterCarbon" height={40}/>
         </Link>
         <Link component={RouterLink} color="white" underline="none" to="/">
           <Button color="inherit">Home</Button>
