@@ -27,7 +27,6 @@ export default function Facilities() {
   // console.log("Month is:",month, typeof month);
   
   const FacilitiesDataYearMonth=FacilitiesData.filter(facility=>facility.year===`${year}` && facility.month===`${month}`)
-  console.log("FacilitiesDataYearMonth is", FacilitiesDataYearMonth)
 
   const pins = useMemo(
     () =>
