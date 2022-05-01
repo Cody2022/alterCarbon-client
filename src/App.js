@@ -12,7 +12,7 @@ import NavBar from "./components/Navbar/Navbar";
 
 function App() {
   useEffect(() => {
-    document.title = "Home";
+    document.title = "AlterCarbon";
   }, []);
 
   return (
