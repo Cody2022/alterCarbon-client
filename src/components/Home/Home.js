@@ -1,48 +1,31 @@
-import React,{useState}from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import background from "../../img/background.jpg";
 import Footer from "../Footer/Footer";
+import {Grid, Typography} from "@mui/material"
 
 const Home = () => {
-  const [showFooter, setShowFooter]=useState(true)
-  
+  const [showFooter, setShowFooter] = useState(true);
+
   return (
+    <Grid conatainer>
+      <Grid xs={12} sm={6} md={3} item>
     <div>
       <div
         style={{
           backgroundImage: `url(${background})`,
           backgroundRepeat: "no-repeat",
           height: 700,
-          width: 1600,
+          width: 1510,
         }}
       >
-        <div className="home">
-          <ul>
-            <li>
-              <Link to="/login" style={{ color: "black" }}>
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup" style={{ color: "black" }}>
-                Signup
-              </Link>
-            </li>
-            <li>
-              <Link to="/map" style={{ color: "black" }}>
-                Map
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-
-
         <Outlet />
       </div>
-       {showFooter && <Footer setShowFooter={setShowFooter} />}
+      {showFooter && <Footer setShowFooter={setShowFooter} />}
     </div>
+        
+      </Grid>
+</Grid>
   );
 };
-
 export default Home;
