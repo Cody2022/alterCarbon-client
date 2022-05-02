@@ -10,8 +10,8 @@ export default function NavBar() {
   return (
     <AppBar position="static">
       <Toolbar>
-      <Link to="/">
-          <img src={logo} alt="AlterCarbon" height={40}/>
+        <Link to="/">
+          <img src={logo} alt="AlterCarbon" height={60}/>
         </Link>
         <Link component={RouterLink} color="white" underline="none" to="/">
           <Button color="inherit">Home</Button>
