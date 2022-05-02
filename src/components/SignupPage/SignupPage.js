@@ -5,6 +5,5 @@ export default function SignupPage() {
   useEffect(() => {
     document.title = "Signup";
   }, []);
-  console.log("Signup");
-  return <Signup />;
+   return <Signup />;
 }
