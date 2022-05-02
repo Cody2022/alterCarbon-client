@@ -2,7 +2,7 @@ import React from 'react'
 
 const HistoryData = (props) => {
     const records=props.userData;
-   console.log("records is:", records)
+  //  console.log("records is:", records)
   return (
       <div>
         <h2>Carbon Emission and Offset:</h2>
