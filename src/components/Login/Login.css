@@ -1,7 +1,25 @@
 .login-form {
+    position: relative;
+    top: 25%; left: 75%;
+    right: 0;
+    margin: 10px;
+    max-width: 250px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px;
-    background-color: rgb(134, 219, 222);
+    border: 10px;
+    background-color: rgb(250, 246, 244);
+    background-size: 10% auto;
+    height: auto;
+    justify-content: center;
+}
+
+.login-form h1 {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(19, 142, 208);
+}
+.login-form form {
+    align-items: center;
 }
