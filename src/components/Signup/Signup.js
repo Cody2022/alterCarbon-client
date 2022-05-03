@@ -1,6 +1,10 @@
+import { Button, Container, TextField } from "@mui/material";
+import { Box, fontSize } from "@mui/system";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./Signup.css";
+import Forest from "../../img/SignupBackground.png";
 
 const signupUser = async (credentials) => {
   const res = await fetch("/api/signup", {
@@ -18,31 +22,49 @@ const Signup = (props) => {
   const [user, setUser] = useState();
   const [passw, setPassw] = useState();
   const [message, setMessage] = useState();
+  const [showlogin, setShowLogin]  = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userSubmit = await signupUser({ user, passw });
     setMessage(userSubmit.message);
+    if(userSubmit.status === "signupsuccess"){
+      setShowLogin(true)
+
+    }
   };
+
+   
   const navigate = useNavigate();
-  const handleButton = () => {
-    sessionStorage.clear();
-    navigate("/login");
+  const handleRedirectLogin = () => {
+    
+      navigate("/login");
+    
   };
 
   return (
-    <div className="signup-wrapper">
-      <div className="backtoLoginButton" onClick={handleButton}></div>
+      
+      <div
+        style={{
+          backgroundImage: `url(${Forest})`,
+          backgroundRepeat: "no-repeat",
+          height: 700,
+          width: 1510,
+        }}
+      >
+        
+    <div className="signup-form">
       <h1>Please Signup</h1>
-      <form className="signup-form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         {message && (
           <div>
             <lable style={{ color: "red" }}>{message}!</lable>
           </div>
         )}
-        <label>Username:</label>
-        <br />
-        <input
+        <br/>
+        <TextField
+          label = 'Name'
+          variant= "standard"
           type="text"
           name="User"
           placeholder="Username"
@@ -50,25 +72,29 @@ const Signup = (props) => {
         />
         <br />
 
-        <label>Password: </label>
         <br />
-        <input
+        <TextField
+          label ="Password"
+          variant="standard"
           type="password"
           name="Password"
           placeholder="Password"
           onChange={(e) => setPassw(e.target.value)}
         />
-        <div>
-          <br />
-          <button type="submit">Sign Up</button>
-          <br />
-        </div>
         <br />
+        <br />
+        
+          <br />
+          <Button type="submit" style={{color:"white",backgroundColor:"#04AA6D"}}>Signup</Button>
+          {showlogin &&  <Button style={{color:"blue"}} onClick={handleRedirectLogin}>Login</Button>}
+          <br />
+        
+        
       </form>
-      <div>
-        <br />
-      </div>
+      
     </div>
+    </div>
+    
   );
 };
 
