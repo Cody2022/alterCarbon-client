@@ -20,7 +20,7 @@ export default function NavBar() {
           <Button color="inherit">Login </Button>
         </Link>
         <Link component={RouterLink} color="white" underline="none" to="/signup">
-          <Button color="inherit">Sighup</Button>
+          <Button color="inherit">SignUp</Button>
         </Link>
         <Link component={RouterLink} color="white" underline="none" to="/map">
           <Button color="inherit">Map</Button>

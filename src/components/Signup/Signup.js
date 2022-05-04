@@ -22,7 +22,7 @@ const Signup = (props) => {
   const [user, setUser] = useState();
   const [passw, setPassw] = useState();
   const [message, setMessage] = useState();
-  const [showlogin, setShowLogin]  = useState(false);
+  const [showlogin, setShowLogin]  = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,7 +54,7 @@ const Signup = (props) => {
       >
         
     <div className="signup-form">
-      <h1>Please Signup</h1>
+      <h1>Please Sign Up</h1>
       <form onSubmit={handleSubmit}>
         {message && (
           <div>
@@ -85,8 +85,8 @@ const Signup = (props) => {
         <br />
         
           <br />
-          <Button type="submit" style={{color:"white",backgroundColor:"#04AA6D"}}>Signup</Button>
-          {showlogin &&  <Button style={{color:"blue"}} onClick={handleRedirectLogin}>Login</Button>}
+          <Button type="submit" style={{color:"white",backgroundColor:"#04AA6D"}}>Signup</Button> <span></span>
+          {showlogin &&  <Button style={{color:"white",backgroundColor:"#04AA6D"}} onClick={handleRedirectLogin}>Login</Button>}
           <br />
         
         
