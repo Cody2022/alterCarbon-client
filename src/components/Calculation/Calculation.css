@@ -30,7 +30,7 @@
     flex-direction: column;
     align-items: center;
     border: 10px;
-    background-color: rgb(250, 246, 244);
+    background-color: rgb(244, 250, 250);
     height: 90%;
     justify-content: center;
 }
@@ -65,13 +65,14 @@
 
 
 .loginButton {
+    text-align: center;
     position: absolute;
-    top: 10%; left: 90% ;
+    top: 10%; left: 83% ;
     display: flex;
     transform: translate(-50%,-50%);
     height: 30px;
     width:max-content;
-    background-color: rgb(133, 210, 220);
+    background-color: rgb(86, 204, 219);
     color: rgb(16, 16, 16);
     line-height: 0;
     margin: 20px;

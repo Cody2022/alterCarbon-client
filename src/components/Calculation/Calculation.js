@@ -1,4 +1,4 @@
-import { BorderRight } from "@mui/icons-material";
+import { BorderRight, CenterFocusStrong } from "@mui/icons-material";
 import { Button, Container, Grid, TextField } from "@mui/material";
 import { Box, color } from "@mui/system";
 import React, { useState } from "react";
@@ -124,20 +124,28 @@ const Calculation = () => {
       const recordSaved = await postRecord({ userName, record });
     }
   };
-
+  
   return (
-    <Container>
+    <Container 
+    fluid
+      style={{
+        backgroundImage: `url(${calPage})`,
+        backgroundRepeat: "no-repeat",
+        height: 700,
+        width: 1800,
+      }}
+    >
       <h1>Carbon Footprint Calculator</h1>
 
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Box>
-          <div className="loginButton">
+        <Grid>
+          <div className="loginButton" >
             <Button variant="outlined" onClick={handleLogout}>
               Logout
             </Button>
           </div>
 
-          <div className="carbon-form-right">
+          <div className="carbon-form-right" style={{ color: 'black', backgroundColor: '#efeafb' }}>
             <form style={{ dispaly: "flex" }} onSubmit={handleSubmit}>
               <div className="carbon-form"></div>
 
@@ -228,12 +236,13 @@ const Calculation = () => {
               <br />
               <br />
             </form>
-            {showSaveStatus && <p>Record has been saved successfully!</p>}
+            
             <br></br>
           </div>
-        </Box>
+        </Grid>
         <Grid>
-          <div className="carbon-form-left">
+          <div className="carbon-form-left" style={{ color: 'black', backgroundColor: '#efeafb' }}>
+          {showSaveStatus && <p>Record has been saved successfully!</p>}
             {carbon && <h2>Total CO2 equivalent, kg: {carbon}</h2>}
             <br />
             <form>
