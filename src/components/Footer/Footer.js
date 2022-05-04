@@ -45,7 +45,7 @@ const Footer = (props)=> {
   }, [city]);
 
   return (
-    <div className="footer">
+    <div className="footer" style={{fontWeight:"bold"}}>
       <div className="canvas">
         <span>{city}</span><sup>{country}</sup>
         <br />

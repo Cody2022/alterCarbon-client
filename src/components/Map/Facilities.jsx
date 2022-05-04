@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {useState, useMemo} from 'react';
-import {render} from 'react-dom';
 import Map, {
   Marker,
   Popup,
@@ -9,10 +8,10 @@ import Map, {
   ScaleControl,
   GeolocateControl
 } from 'react-map-gl';
+import "mapbox-gl/dist/mapbox-gl.css";
 
 import ControlPanel from './ControlPanel';
 import Pin from './pin';
-import "./Map.css"
 import FacilitiesData from '../Data/electricity.json';
 
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; // Set your mapbox token here

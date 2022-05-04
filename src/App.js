@@ -5,7 +5,6 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import SignupPage from "./components/SignupPage/SignupPage";
 import Home from "./components/Home/Home";
 import HistoryPage from "./components/HistoryPage/HistoryPage";
-import Maps from "./components/Map/mapBox";
 import Facilities from "./components/Map/Facilities";
 import Navbar from "./components/Navbar/Navbar";
 import NavBar from "./components/Navbar/Navbar";

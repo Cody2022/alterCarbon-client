@@ -1,15 +1,15 @@
 .control-panel {
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 0;
-    max-width: 320px;
-    background: #fff;
+    max-width: 330px;
+    background: rgba(216, 229, 136, 0.8);
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     padding: 12px 24px;
     margin: 20px;
     font-size: 13px;
     line-height: 2;
-    color: #6b6b76;
+    color: #171739;
     text-transform: capitalize;
     outline: none;
   }
