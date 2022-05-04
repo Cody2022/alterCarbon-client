@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Card, Row, Col, Carousel, Button, Accordion, CardGroup } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import "./Home.css"
 import background from "../../img/background.jpg";
 import Footer from "../Footer/Footer";
 import climate1 from "../../img/climate1.jpg";
@@ -25,7 +26,7 @@ const Home = () => {
         <Col sm={6}>
           <Card className="text-left bg-transparent border-0 text-black my-2 py-1">
             <Card.Body padding="0">
-              <h3>Welcome to AlterCarbon</h3>
+              <h3>Welcome to AlterCarbon</h3><br/>
               <h5>
                 AlterCarbon is a platform where people can track their
                 individual/household carbon footprints and the amount of
@@ -54,8 +55,8 @@ const Home = () => {
               style={{ color: "black", background: "0", fontWeight: "light" }}
             >
               <Accordion.Header>
-              
-                What is climate change?</Accordion.Header>
+                 What is climate change?
+              </Accordion.Header>
               <Accordion.Body>
                 Climate change refers to long-term shifts in temperatures and
                 weather patterns. These shifts may be natural, such as through
@@ -69,8 +70,8 @@ const Home = () => {
               eventKey="1"
               style={{ color: "black", background: "0", fontWeight: "light" }}
             >
-              <Accordion.Header>
-                What are the effects of climate change?
+              <Accordion.Header style={{fontWeight:"bold"}}>
+                 What are the effects of climate change?
               </Accordion.Header>
               <Accordion.Body>
                 Global climate change has already had observable effects on the
@@ -88,7 +89,9 @@ const Home = () => {
               eventKey="2"
               style={{ color: "black", background: "0", fontWeight: "light" }}
             >
-              <Accordion.Header>What can we do?</Accordion.Header>
+              <Accordion.Header>
+                What can we do?
+              </Accordion.Header>
               <Accordion.Body>
                 <p>
                   Mitigation: Climate change can be mitigated by reducing

@@ -300,7 +300,7 @@ const Calculation = () => {
               <br />
               <br />
               <div className="dataButton" onClick={handleHistory}>
-                <Button variant="outlined">Check for Trends here</Button>
+                <Button variant="outlined">Track Carbon Footprint</Button>
               </div>
             </form>
           </div>
