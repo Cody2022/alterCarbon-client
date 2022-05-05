@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Container, Card, Row, Col, Carousel, Button, Accordion, CardGroup } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import "./Home.css"
-import background from "../../img/background.jpg";
 import Footer from "../Footer/Footer";
 import climate1 from "../../img/climate1.jpg";
 import climate2 from "../../img/climate2.jpg";
@@ -27,13 +26,13 @@ const Home = () => {
             <Card.Body padding="0">
               <h3>Welcome to AlterCarbon</h3><br/>
               <h5>
-                AlterCarbon is a platform where people can track their
+                AlterCarbon is a platform where Calgarians can track their
                 individual/household carbon footprints and the amount of
                 greenhouse gas emissions from City of Calgary's facilities.{" "}
               </h5>
               <h5>
-                The logged in users can calculate, save, and analyze their
-                carbon footprints caused by the daily activities, such as
+                The logged-in users can calculate, save, and analyze the
+                carbon footprints caused by their daily activities, such as
                 electricity and natural gas consumptions, treatments of
                 waterwaste and foodwaste, and car usage. This platform also provides solutions to offset carbon footprints.
               </h5>
@@ -206,8 +205,8 @@ const Home = () => {
             </Card>
             <Card style={{background:"0",border:"0"}}>
               <Card.Body>
-              <Card.Title style={{ color: "black", fontWeight: "bold" }}>Odio-Zach</Card.Title>
-              <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="">
+              <Card.Title style={{ color: "black", fontWeight: "bold" }}>Zacharia Odio</Card.Title>
+              <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="https://www.linkedin.com/in/zach-odio-383a3616">
                 LinkedIn
               </Card.Link>
               </Card.Body>
