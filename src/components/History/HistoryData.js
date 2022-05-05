@@ -15,12 +15,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import { useNavigate } from 'react-router-dom';
 
@@ -38,9 +34,6 @@ function createData(date, electricity, naturalgas, wastewater, foodwaste,plastic
   };
 }
 
-// const handleDelete=()=>{
-
-// }
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -89,7 +82,7 @@ const headCells = [
     id: 'naturalgas',
     numeric: true,
     disablePadding: false,
-    label: 'Natural gas burn',
+    label: 'Natural gas consumption',
   },
   {
     id: 'wastewater',
