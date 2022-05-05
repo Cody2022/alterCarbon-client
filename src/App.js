@@ -15,8 +15,8 @@ function App() {
   }, []);
 
   return (
-    <div className="wrapper">
-      <header className="wrapper-header">
+    <div className="">
+      <header className="">
         <NavBar />
       </header>
       <Routes>

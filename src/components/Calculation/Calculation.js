@@ -126,32 +126,35 @@ const Calculation = () => {
   };
   
   return (
-    <Container 
-    fluid
-      style={{
-        backgroundImage: `url(${calPage})`,
-        backgroundRepeat: "no-repeat",
-        height: 700,
-        width: 1800,
-      }}
-    >
-      <h1>Carbon Footprint Calculator</h1>
+    <div
+        style={{
+          backgroundImage: `url(${calPage})`,
+          backgroundRepeat: "no-repeat",
+          height: 700,
+          width: 1510,
+        }}
+      >
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid>
-          <div className="loginButton" >
+
+    <Container>
+      <h1 textAlign="center">Carbon Footprint Calculator</h1>
+      <div className="logoutButton" >
             <Button variant="outlined" onClick={handleLogout}>
               Logout
             </Button>
           </div>
 
-          <div className="carbon-form-right" style={{ color: 'black', backgroundColor: '#efeafb' }}>
-            <form style={{ dispaly: "flex" }} onSubmit={handleSubmit}>
-              <div className="carbon-form"></div>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid>
+          
 
-              <h2>Enter Monthly Consumtion</h2>
-              <TextField
-                label="Electricty Consumtion (kWh/month)"
+          <div className="carbon-form-left" style={{ color: 'black', backgroundColor: '#efeafb' }}>
+            <form style={{ dispaly: "flex" }} onSubmit={handleSubmit}>
+               <br />
+               <br />
+
+                <TextField
+                label="Electricty Consumption (kWh)"
                 variant="standard"
                 type="text"
                 name="Electricity"
@@ -163,7 +166,7 @@ const Calculation = () => {
               <br />
               <br />
               <TextField
-                label="Natual Gas Consumtion(gigajoule(GL)/month)"
+                label="Natual Gas Consumption (GJ)"
                 variant="standard"
                 type="text"
                 name="nGas"
@@ -175,7 +178,7 @@ const Calculation = () => {
               <br />
               <br />
               <TextField
-                label="Water Consumtion(m3/month)"
+                label="Water Consumption (m3)"
                 variant="standard"
                 type="text"
                 name="water"
@@ -187,7 +190,7 @@ const Calculation = () => {
               <br />
               <br />
               <TextField
-                label="Foodwaste going to landfill(kg/month)"
+                label="Foodwaste going to landfill (kg)"
                 variant="standard"
                 type="text"
                 name="food"
@@ -199,7 +202,7 @@ const Calculation = () => {
               <br />
               <br />
               <TextField
-                label="Plasticwaste going to landfill (kg/month)"
+                label="Plasticwaste going to landfill (kg)"
                 variant="standard"
                 type="text"
                 name="plastic"
@@ -211,7 +214,7 @@ const Calculation = () => {
               <br />
               <br />
               <TextField
-                label="Car Driving (kilometer/month)"
+                label="Car Driving (kilometer)"
                 variant="standard"
                 type="text"
                 name="car"
@@ -219,13 +222,9 @@ const Calculation = () => {
                 style={{ textAlign: "center" }}
                 onChange={(e) => setCar(e.target.value)}
               />
-
-              <br />
-              <br />
               <div className="calButton">
                 <br />
-                <br />
-                <br />
+                
                 <Button type="submit">Calculate</Button>
                 <br />
                 {showSaveButton && (
@@ -241,7 +240,7 @@ const Calculation = () => {
           </div>
         </Grid>
         <Grid>
-          <div className="carbon-form-left" style={{ color: 'black', backgroundColor: '#efeafb' }}>
+          <div className="carbon-form-right" style={{ color: 'black', backgroundColor: '#efeafb' }}>
           {showSaveStatus && <p>Record has been saved successfully!</p>}
             {carbon && <h2>Total CO2 equivalent, kg: {carbon}</h2>}
             <br />
@@ -254,13 +253,17 @@ const Calculation = () => {
                   fontWeight: "bold",
                 }}
               >
-                {carbonEmission.electricityco2e}
+               {carbonEmission.electricityco2e}
               </span>
+              <br />
+              <br />
               <br />
               <label>Natural gas CO2 emission, kg: </label>{" "}
               <span style={{ textDecoration: "underline", fontWeight: "bold" }}>
                 {carbonEmission.gasco2e}
               </span>
+              <br />
+              <br />
               <br />
               <label>Wastewater treatment CO2 emission, kg: </label>{" "}
               <span
@@ -273,6 +276,8 @@ const Calculation = () => {
                 {carbonEmission.waterco2e}
               </span>
               <br />
+              <br />
+              <br />
               <label>Foodwaste treatment CO2 emission, kg: </label>{" "}
               <span
                 style={{
@@ -284,6 +289,8 @@ const Calculation = () => {
                 {carbonEmission.foodco2e}
               </span>
               <br />
+              <br />
+              <br />
               <label>Plasticwaste treatment CO2 emission, kg: </label>{" "}
               <span
                 style={{
@@ -294,6 +301,8 @@ const Calculation = () => {
               >
                 {carbonEmission.plasticco2e}
               </span>
+              <br />
+              <br />
               <br />
               <label>Car CO2 emission, kg: </label>{" "}
               <span
@@ -316,6 +325,7 @@ const Calculation = () => {
         </Grid>
       </Grid>
     </Container>
+    </div>
   );
 };
 
