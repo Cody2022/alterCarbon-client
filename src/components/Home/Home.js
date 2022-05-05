@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate } from "react-router-dom";
 import "./Home.css"
 import Footer from "../Footer/Footer";
+import background from "../../img/background.jpg"
 import climate1 from "../../img/climate1.jpg";
 import climate2 from "../../img/climate2.jpg";
 import climate3 from "../../img/climate3.jpg";
@@ -17,8 +18,12 @@ const Home = () => {
     <Container
       fluid
       style={{
-        backgroundColor:"#9fe68b6e"
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat",
       }}
+      // style={{
+      //   backgroundColor:"#9fe68b6e"
+      // }}
     >
       <Row className="px-8 my-2">
         <Col sm={6}>
@@ -180,6 +185,12 @@ const Home = () => {
                 href="https://www.calgary.ca/uep/esm/energy-savings/climate-change.html?redirect=/climateprogram"
               >
                 Calgary's Climate Change Program
+              </Card.Link><br/>
+              <Card.Link
+                style={{ color: "#3d0bf1", fontWeight: "bold" }}
+                href="https://www.climatiq.io/docs"
+              >
+                Climatiq Emission Calculation API
               </Card.Link>
             </Card.Body>
           </Card>
