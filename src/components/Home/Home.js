@@ -28,15 +28,15 @@ const Home = () => {
             <Card.Body padding="0">
               <h3>Welcome to AlterCarbon</h3><br/>
               <h5>
-                AlterCarbon is a platform where people can track their
+                AlterCarbon is a platform where Calgarians can track their
                 individual/household carbon footprints and the amount of
                 greenhouse gas emissions from City of Calgary's facilities.{" "}
               </h5>
               <h5>
-                The logged in users can calculate, save, and analyze their
-                carbon footprints caused by the daily activities, such as
+                The logged-in users can calculate, save, and analyze their
+                carbon footprints caused by their daily activities, such as
                 electricity and natural gas consumptions, treatments of
-                waterwaste and foodwaste, and car usage. The this platform also provides carbon offest solutions.
+                waterwaste and foodwaste, and car usage. This platform also provides carbon offset solutions.
               </h5>
             </Card.Body>
           </Card>
@@ -81,7 +81,7 @@ const Home = () => {
                 <br />
                 Some of the long-term effects of global climate change includes
                 rising temperature, changes in precipitation patterns, more
-                droughts and heat waves, rising sea level, and severe
+                droughts and heatwaves, rising sea levels, and severe
                 hurricanes.
               </Accordion.Body>
             </Accordion.Item>
@@ -207,8 +207,8 @@ const Home = () => {
             </Card>
             <Card style={{background:"0",border:"0"}}>
               <Card.Body>
-              <Card.Title style={{ color: "black", fontWeight: "bold" }}>Odio-Zach</Card.Title>
-              <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="">
+              <Card.Title style={{ color: "black", fontWeight: "bold" }}>Zacharia Odio</Card.Title>
+              <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="https://www.linkedin.com/in/zach-odio-383a3616">
                 LinkedIn
               </Card.Link>
               </Card.Body>
