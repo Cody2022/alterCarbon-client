@@ -18,8 +18,7 @@ const Home = () => {
     <Container
       fluid
       style={{
-        backgroundImage: `url(${background})`,
-        backgroundRepeat: "no-repeat",
+        backgroundColor:"#9fe68b6e"
       }}
     >
       <Row className="px-8 my-2">
@@ -36,7 +35,7 @@ const Home = () => {
                 The logged in users can calculate, save, and analyze their
                 carbon footprints caused by the daily activities, such as
                 electricity and natural gas consumptions, treatments of
-                waterwaste and foodwaste, and car usage. The this platform also provides carbon offest solutions.
+                waterwaste and foodwaste, and car usage. This platform also provides solutions to offset carbon footprints.
               </h5>
             </Card.Body>
           </Card>
@@ -144,7 +143,7 @@ const Home = () => {
         </Col>
       </Row>
 
-      <Row className="footer" style={{background:"#95a73fbf"}}>
+      <Row className="footer" style={{background:"rgba(232, 1174, 62, 0.26)"}}>
         <Col className="footer-col-1" sm={3}>
           <Card className="text-center bg-transparent border-0 text-black my-2 py-1">
             {showFooter && <Footer setShowFooter={setShowFooter} />}

@@ -1,5 +1,6 @@
 .chart-container {
     position: relative;
+    background-color:rgba(239, 240, 233,0.8);
     margin: auto;
     height: 80vh;
     width: 70vw;

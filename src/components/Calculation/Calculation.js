@@ -135,7 +135,7 @@ const Calculation = () => {
         width: 1800,
       }}
     >
-      <h1>Carbon Footprint Calculator</h1>
+      <h1 style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>Carbon Footprint Calculator</h1>
 
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid>
@@ -236,8 +236,7 @@ const Calculation = () => {
               <br />
               <br />
             </form>
-            
-            <br></br>
+          
           </div>
         </Grid>
         <Grid>

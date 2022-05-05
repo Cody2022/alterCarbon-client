@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import HistoryData from "./HistoryData";
 import { useNavigate } from "react-router-dom";
 import Datacharts from "./Datacharts";
+import historybg from "../../img/historybg.jpg"
+import {ToggleButton } from "@mui/material";
 
 const History = () => {
   const [userData,setUserData]=useState(); 
   const navigate=useNavigate();
-  const [showall, setShowall]=useState(false)
+  const [showTable, setShowTable]=useState(true)
   const [showcharts, setShowcharts]=useState(true)
 
     useEffect(()=>{
@@ -35,22 +37,40 @@ const History = () => {
     
 
   return (
-    <div className="history-wrapper">
-        <div className="backtoCalculationButton">
-          <button onClick={()=> navigate("/login")}>Back to Calculation</button>
-        </div>
+    <div
+      className="history-wrapper"
+      style={{
+        backgroundImage: `url(${historybg})`,
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="backtoCalculationButton">
+        <button onClick={() => navigate("/login")}>Back to Calculation</button>
+      </div>
 
-      <h1>Carbon Footprint Analysis</h1>
-        <div className="history" >
-          <button onClick={()=>setShowcharts(curr=>!curr)}>Charts</button>
-          <button onClick={()=>setShowall(curr=>!curr)}>All records</button>
-        </div>
-     
-      {showcharts && userData && <Datacharts userData={userData}/>}
-      {showall && userData && <HistoryData userData={userData}/>}
-     
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        Carbon Footprint Analysis
+      </h1>
+      <div className="history">
+    
+        <ToggleButton value="true" aria-label="chart" style={{background:"#29d9d97d"}} onChange={() => setShowcharts((curr) => !curr)}>
+          Chart
+        </ToggleButton><span> </span>
+        <ToggleButton value="true" aria-label="table" style={{background:"#29d9d97d"}} onChange={() => setShowTable((curr) => !curr)}>
+          Table
+        </ToggleButton>
+      </div>
+
+      {showcharts && userData && <Datacharts userData={userData} />}
+      <br />
+      {showTable && userData && <HistoryData userData={userData} />}
     </div>
-
   );
 };
 
