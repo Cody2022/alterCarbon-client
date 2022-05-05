@@ -235,8 +235,7 @@ const Calculation = () => {
               <br />
               <br />
             </form>
-            
-            <br></br>
+          
           </div>
         </Grid>
         <Grid>

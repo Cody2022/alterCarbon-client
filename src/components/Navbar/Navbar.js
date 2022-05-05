@@ -23,7 +23,7 @@ export default function NavBar() {
           <Button color="inherit">SignUp</Button>
         </Link>
         <Link component={RouterLink} color="white" underline="none" to="/map">
-          <Button color="inherit">Map</Button>
+          <Button color="inherit">Emissions of Facilities</Button>
         </Link>
       </Toolbar>
     </AppBar>
