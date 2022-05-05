@@ -144,6 +144,10 @@ const Calculation = () => {
             </Button>
           </div>
 
+          <div className="trackButton" onClick={handleHistory}>
+                <Button variant="outlined">Track Carbon Footprint</Button>
+              </div>
+
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid>
           
@@ -226,10 +230,13 @@ const Calculation = () => {
                 <br />
                 
                 <Button type="submit">Calculate</Button>
+                
                 <br />
+                <div className="saveButton">
                 {showSaveButton && (
                   <Button onClick={handleSaveResult}>Save</Button>
                 )}
+                </div>
               </div>
 
               <br />
@@ -316,9 +323,7 @@ const Calculation = () => {
               </span>
               <br />
               <br />
-              <div className="dataButton" onClick={handleHistory}>
-                <Button variant="outlined">Track Carbon Footprint</Button>
-              </div>
+              
             </form>
           </div>
         </Grid>
