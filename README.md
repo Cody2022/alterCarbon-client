@@ -1,3 +1,6 @@
+"AlterCarbon" is a fully functional and responsive web application. Users can use the application to calculate and track personal/household carbon footprints, monitor CO2 emissions of the City of Calgary’s facilities on a map, and perform calculation for offsetting carbon emissions.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
