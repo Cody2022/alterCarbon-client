@@ -11,7 +11,7 @@ const Footer = (props)=> {
 
   useEffect(() => {
     const geoLocation = async () => {
-      let geoResponse = await fetch ("http://ip-api.com/json/")     
+      let geoResponse = await fetch ("https://ipapi.co/184.64.0.1/json/")     
       let geoJson = await geoResponse.json();
       setCity(geoJson.city);
     };

@@ -10,9 +10,14 @@ import Map, {
 } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
 
+import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
 import ControlPanel from './ControlPanel';
 import Pin from './pin';
 import FacilitiesData from '../Data/electricity.json';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
+
+
 
 const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; // Set your mapbox token here
 
