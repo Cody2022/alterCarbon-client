@@ -88,8 +88,6 @@ const Signup = (props) => {
           <Button type="submit" style={{color:"white",backgroundColor:"#04AA6D"}}>Signup</Button> <span></span>
           {showlogin &&  <Button style={{color:"white",backgroundColor:"#04AA6D"}} onClick={handleRedirectLogin}>Login</Button>}
           <br />
-        
-        
       </form>
       
     </div>

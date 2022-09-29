@@ -1,21 +1,5 @@
-/* .footer {
-    background-color: rgba(49, 194, 102, 0.1);
-    /* border-top:2px solid rgb(60, 16, 220); */
-    /* position: flex;
-    width: 100%;
-    /* left: 1%; */
-    /* bottom: 0; */ 
-    /* color: white;
-    font-size: 25px; */
- /* }    */ */
-
  .canvas{
     position: relative;
     size: 10;
     left: 3%;
  }
-
-/* .icon{  */
-    /* position: relative;
-    left: -1%; */
-/* }*/
