@@ -47,9 +47,8 @@ const Signup = (props) => {
       <div
         style={{
           backgroundImage: `url(${Forest})`,
-          backgroundSize: "cover",
+          backgroundSize: "100%",
           height: 700,
-          // width: 1510,
         }}
       >
         

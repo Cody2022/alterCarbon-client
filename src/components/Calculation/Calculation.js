@@ -129,15 +129,15 @@ const Calculation = () => {
     <div
         style={{
           backgroundImage: `url(${calPage})`,
-          backgroundRepeat: "no-repeat",
-          height: 700,
-          width: 1510,
+          backgroundRepeat: "repeat",
+          backgroundSize:"100%",
+          height:700
         }}
       >
 
 
     <Container>
-      <h1 textAlign="center">Carbon Footprint Calculator</h1>
+      <h1 textalign="center">Carbon Footprint Calculator</h1>
       <div className="logoutButton" >
             <Button variant="outlined" onClick={handleLogout}>
               Logout
@@ -148,15 +148,12 @@ const Calculation = () => {
                 <Button variant="outlined">Track Carbon Footprint</Button>
               </div>
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid>
-          
-
-          <div className="carbon-form-left" style={{ color: 'black', backgroundColor: '#efeafb' }}>
+           <div className="carbon-form-left" style={{ color: 'black', backgroundColor: '#efeafb' }}>
             <form style={{ dispaly: "flex" }} onSubmit={handleSubmit}>
                <br />
                <br />
-
                 <TextField
                 label="Electricty Consumption (kWh)"
                 variant="standard"

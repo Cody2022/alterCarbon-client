@@ -8,7 +8,7 @@ import background from "../../img/background.jpg"
 import climate1 from "../../img/climate1.jpg";
 import climate2 from "../../img/climate2.jpg";
 import climate3 from "../../img/climate3.jpg";
-
+import logo from "../../img/logo.jpg";
 
 const Home = () => {
   const [showFooter, setShowFooter] = useState(true);
@@ -149,14 +149,14 @@ const Home = () => {
 
       <Row className="footer" style={{background:"rgba(232, 1174, 62, 0.26)"}}>
         <Col className="footer-col-1" sm={3}>
-          <Card className="text-center bg-transparent border-0 text-black my-2 py-1">
+          <Card className="text-center bg-transparent border-0 text-black my-2 py-2">
             {showFooter && <Footer setShowFooter={setShowFooter} />}
           </Card>
         </Col>
-        <Col className="footer-col-2" sm={3}>
-          <Card className="text-left bg-transparent border-0 text-black my-2 py-1">
-            <Card.Body style={{ text: "center" }}>
-              <Card.Title style={{ color: "black", fontWeight: "bold" }}>
+        <Col className="footer-col-2" sm={4}>
+          <Card className="text-left bg-transparent border-0 text-black my-1 ">
+            <Card.Body style={{ text: "center", lineHeight:"1.8rem" }}>
+              <Card.Title style={{ color: "black", fontWeight: "bold", paddingBottom:"0.5rem" }}>
                 Learn More about Climate Change
               </Card.Title>
               <Card.Link
@@ -167,7 +167,7 @@ const Home = () => {
               </Card.Link>
               <br />
               <Card.Link
-                style={{ color: "#3d0bf1", fontWeight: "bold" }}
+                style={{ color: "#3d0bf1", fontWeight: "bold"}}
                 href="https://climate.nasa.gov/"
               >
                 NASA-Global Climate Change
@@ -195,33 +195,41 @@ const Home = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col className="footer-col-3 text-center bg-transparent border-0 my-2 py-2" sm={6}>
-          <h3 style={{ color: "black", fontWeight: "bold" }}>About Us</h3>
+        <Col className="footer-col-3 text-center bg-transparent border-0 py-2" sm={4}>
+          <h4 style={{ color: "black", fontWeight: "bold" }}>Contact Us</h4>
           <CardGroup >
             <Card style={{background:"0",border:"0"}}>
-              <Card.Body>
-              <Card.Title style={{ color: "black", fontWeight: "bold" }}>Sixu (Cody) Zheng</Card.Title>
+            <Card.Img variant="top" src={logo} />
+              <Card.Body style={{padding: "0.25rem"}}>
+              <Card.Title style={{ color: "black" }}>A little effort towards saving the environment is better than no effort.</Card.Title>
+              
+              </Card.Body>
+            </Card>
+
+
+            <Card style={{background:"0",border:"0"}}>
+              <Card.Body style={{padding: "0.25rem"}}>
+              <Card.Title style={{ color: "black", marginBottom:"0.1rem" }}>Sixu (Cody) Zheng</Card.Title>
               <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="https://www.linkedin.com/in/sixu-cody-zheng">
                 LinkedIn
               </Card.Link>
               </Card.Body>
-            </Card>
-            <Card style={{background:"0",border:"0"}}>
-               <Card.Body>
-               <Card.Title style={{ color: "black", fontWeight: "bold" }}>Shirisha Lakku (Siri)</Card.Title>
+              <Card.Body style={{padding: "0.25rem"}}>
+               <Card.Title style={{ color: "black", marginBottom:"0.1rem" }}>Shirisha Lakku (Siri)</Card.Title>
               <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="https://www.linkedin.com/in/siri-lakku">
                 LinkedIn
               </Card.Link>
               </Card.Body>
-            </Card>
-            <Card style={{background:"0",border:"0"}}>
-              <Card.Body>
-              <Card.Title style={{ color: "black", fontWeight: "bold" }}>Zacharia Odio</Card.Title>
+              <Card.Body style={{padding: "0.25rem"}}>
+              <Card.Title style={{ color: "black", marginBottom:"0.05rem" }}>Zacharia Odio</Card.Title>
               <Card.Link style={{ color: "#3d0bf1", fontWeight: "bold" }} href="https://www.linkedin.com/in/zach-odio-383a3616">
                 LinkedIn
               </Card.Link>
               </Card.Body>
             </Card>
+
+
+           
           </CardGroup>
         </Col>
       </Row>

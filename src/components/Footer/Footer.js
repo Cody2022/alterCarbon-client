@@ -6,7 +6,7 @@ const Footer = (props)=> {
   const [temp, setTemp] = useState();
   const [description, setDescription] = useState();
   const [icon, setIcon] = useState();
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("Calgary");
   const [country, setCountry] = useState();
 
   useEffect(() => {
